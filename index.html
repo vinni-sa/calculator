@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue calculator</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.8/dist/vue.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="circle_1"></div>
+        <div class="circle_2"></div>
+        <div class="circle_3"></div>
+        <div id="app">
+            <!-- <div class="theme">
+                <button class="theme_button">dark</button>
+                <button class="theme_button">light</button>
+            </div> -->
+            <input @keyup.enter="calc()" type="text" v-model="textInput" placeholder="0">
+            <div class="menu">
+                <button class="button_ operation" :class="{equal: oper=='='}" v-for="oper in operations"
+                    @click="oper == 'C' ? reset() : oper == '=' ? calc() : oper == '+/-' ? convert() : input(oper)">
+                    {{ oper }}
+                </button>
+
+                <div class="numbers_">
+                    <button class="button_ number" :class="{zero: num=='0'}" v-for="num in numbers" @click="input(num)">
+                        {{ num }}
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        var vue = new Vue({
+            el: '#app',
+            data: {
+                textInput: '',
+                numbers: [1, 2, 3, 4, 5, 6, 7, 8, 9, 0, '.'],
+                operations: ['C', '+/-', '/', 'x', '-', '+', '='],
+            },
+            methods: {
+                input: function (char) {
+                    this.textInput = this.textInput.toString();
+                    this.textInput += char;
+                },
+                reset: function () {
+                    this.textInput = '';
+                },
+                calc: function () {
+                    this.textInput = this.textInput.toString().replace('x', '*')
+                    this.textInput = eval(this.textInput);
+                },
+                convert: function () {
+                    this.textInput = eval(this.textInput) * (-1);
+                }
+            }
+
+        })
+
+    </script>
+
+</body>
+
+</html>

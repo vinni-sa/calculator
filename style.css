@@ -1,0 +1,204 @@
+body {
+    padding: 0;
+    margin: 0;
+    background: #edc0bf;
+    background: linear-gradient(90deg, #edc0bf 0, #c4caef 58%);
+    font-family: 'Inter', sans-serif;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+
+    width: 600px;
+    height: 600px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.circle_1 {
+    height: 200px;
+    width: 200px;
+    border-radius: 100px;
+    background: #7e3ae3;
+    background: linear-gradient(90deg, #7e3ae3 0, #bd2b91 58%);
+    position: relative;
+    top: -140px;
+    left: 40px;
+}
+
+.circle_2 {
+    height: 100px;
+    width: 150px;
+    border-radius: 100px;
+    background: #7e3ae3;
+    background: linear-gradient(970deg, #e3893a 0, #c92543 58%);
+    position: relative;
+    top: 30px;
+    left: 60px;
+}
+
+.circle_3 {
+    height: 120px;
+    width: 120px;
+    border-radius: 100px;
+    background: #e3b93a;
+    background: linear-gradient(290deg, #3ae3c1 0, #2571c9 78%);
+    position: relative;
+    top: 160px;
+    left: -270px;
+}
+
+#app {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 200px;
+    height: 300px;
+
+    padding: 20px;
+
+    border-radius: 1rem;
+    box-shadow: 1px 1px 10px 0px rgba(0, 0, 0, 0.2);
+    background: rgba(255, 255, 255, .7);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+}
+
+.theme {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.theme_button {
+    width: 50%;
+    margin: 10px;
+    background: none;
+    border: 0px;
+    font-family: inherit;
+}
+
+input {
+    margin: 20px 5px 5px 5px;
+    padding: 5px 20px;
+    width: -webkit-fill-available;
+    display: block;
+    background: transparent;
+    font: inherit;
+    font-size: 14px;
+    text-align:right;
+    border: 0;
+    border-radius: 1rem;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    box-shadow: 1px 1px 10px 0px rgba(0, 0, 0, 0.2),
+    inset 0 0 20px rgba(255, 255, 255, 0.879);
+}
+
+input::placeholder {
+    color: #000000;
+}
+
+input:focus {
+    color: #212529;
+    /* border-color: #bdbdbd; */
+    outline: 0;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    box-shadow: 1px 1px 10px 0px rgba(0, 0, 0, 0.3),
+    inset 0 0 20px rgba(255, 255, 255, 0.879);
+    /* transition: 1s; */
+    /* box-shadow: 0 0 0 0.2rem rgba(244, 244, 244, 0.25); */
+}
+
+.menu {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    width: 100%;
+    margin: 20px;
+    padding: 0;
+}
+
+.button_ {
+    margin: 5px;
+    padding: 0;
+    border: 0px;
+    height: 30px;
+    background: transparent;
+    color: inherit;
+    background: rgba(255, 255, 255, );
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    box-shadow: 1px 1px 10px 0px rgba(0, 0, 0, 0.2),
+    /* inset 0 0 20px rgba(250, 24, 24, 0.879) */
+    inset 0 0 20px rgba(255, 255, 255, 0.879);
+}
+
+.button_:hover {
+    color: #212529;
+    /* border-color: #bdbdbd; */
+    outline: 0;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    box-shadow: 1px 1px 10px 0px rgba(0, 0, 0, 0.3),
+    inset 0 0 5px rgb(238, 222, 230);
+    transition: 30ms;
+}
+
+.button_:active {
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    box-shadow: 1px 1px 10px 0px rgba(0, 0, 0, 0.3),
+    inset 0 0 5px rgb(56, 54, 55);
+    transition: 30ms;
+}
+
+.operation {
+    border: 0px;
+    padding: 0px;
+    border-radius: 1rem;
+}
+
+.numbers_ {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    grid-row: 2/6;
+    grid-column: 1/4;
+    border: 0px;
+    border-radius: 1rem;
+    background-color: none;
+}
+
+.equal {
+    grid-row: 4/6;
+    grid-column: 4/4;
+    height: -webkit-fill-available;
+}
+
+.number {
+    background-color: none;
+    border: 0px;
+    margin: 5px;
+    padding: 0;
+    border-radius: 1rem;
+}
+
+.zero {
+    grid-row: 4/4;
+    grid-column: 1/3;
+}
